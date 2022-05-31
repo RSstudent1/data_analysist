@@ -32,4 +32,3 @@ for pdf in pdfs:
 
 merger.write("result.pdf")
 merger.close()
-
