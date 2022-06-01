@@ -1,21 +1,7 @@
-import seaborn as sns
-import matplotlib.pyplot as plt
-from matplotlib.backends.backend_pdf import PdfPages
+from fpdf import FPDF
 
-sns.set_theme(style="whitegrid")
-
-penguins = sns.load_dataset("penguins")
-
-# Draw a nested barplot by species and sex
-g = sns.catplot(
-    data=penguins, kind="bar",
-    x="species", y="body_mass_g", hue="sex",
-    ci="sd", palette="dark", alpha=.6, height=6
-)
-g.despine(left=True)
-g.set_axis_labels("", "Body mass (g)")
-g.legend.set_title("")
-
-
-sns.scatterplot(x='spieces', y='body_mass_g', data=df)
-plt.savefig('saving-a-seaborn-plot-as-pdf-file.pdf')
+pdf=FPDF()
+pdf.add_page()
+pdf.set_font('Courier','B',16)
+pdf.cell(40,10,'Hello World!')
+pdf.output('tuto1.pdf','F')

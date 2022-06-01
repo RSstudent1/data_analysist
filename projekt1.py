@@ -16,11 +16,11 @@ df = pd.read_excel('C:\Python\Scripts\egzamin.xlsx',sheet_name='dane')
 #CREATE PDF
 with PdfPages('big1.pdf') as pdf:
     boxplot = df.boxplot(column='wartosc', by='przedmiot', figsize = (10,10), rot = 1000, fontsize= '8', grid = True)
-#    pdf.savefig()
+    pdf.savefig()
 
 with PdfPages('big2.pdf') as pdf:
     boxplot = df.boxplot(column='wartosc', by='plec', figsize = (10,10), rot = 1000, fontsize= '8', grid = True)
-#    pdf.savefig()
+    pdf.savefig()
 
 #MERGE PDF
 pdfs = ['big1.pdf', 'big2.pdf']
